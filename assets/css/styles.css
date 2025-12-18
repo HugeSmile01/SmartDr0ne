@@ -234,7 +234,7 @@ nav {
     color: var(--primary-color);
 }
 
-/* Gallery Grid */
+/* Gallery */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -430,7 +430,7 @@ footer {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design / Ag size */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -485,5 +485,75 @@ footer {
     .simulator-link {
         padding: 0.8rem 2rem;
         font-size: 1rem;
+    }
+}
+
+/* Drone Feature */
+
+/* Container Centering */
+.drone-main-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically if height is set */
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle, #1a1a2e 0%, #0f0f1a 100%);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 90%; /* Responsive width */
+    border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+/* Typography */
+.drone-title {
+    font-size: clamp(2rem, 8vw, 3.5rem); /* Responsive font size */
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+}
+
+.architect-tag {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: #888;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.architect-tag span {
+    color: #00f2fe;
+    font-weight: bold;
+}
+
+/* Responsive Image Handling */
+.drone-visual-container {
+    width: 100%;
+    max-width: 600px; /* Limits size on desktop */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.responsive-drone-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3));
+    transition: transform 0.3s ease;
+}
+
+/* Subtle Hover Effect */
+.drone-main-display:hover .responsive-drone-img {
+    transform: scale(1.05);
+}
+
+/* Mobile Specific Tweaks */
+@media (max-width: 480px) {
+    .drone-main-display {
+        padding: 20px 15px;
+    }
+    .drone-title {
+        letter-spacing: 2px;
     }
 }
