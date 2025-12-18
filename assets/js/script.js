@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+// Mobile Menu function paras list
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close menu when clicking on a link
+    // Close menu nga part
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for anchor links
+    // Pang smooth sa scroll sa anchor tags
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add active class to current page in navigation
+    // Active list part ug unsay current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Scroll reveal animation
+    // Function sa scroll reveal effect 
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements with fade-in class
+    // e observe ag fading
     document.querySelectorAll('.feature-card, .gallery-item, .spec-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Form submission handler
+    // Submit sa form
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add navbar background on scroll
+    // Background Navigation bar when scroll
     window.addEventListener('scroll', function() {
         const nav = document.querySelector('nav');
         if (window.scrollY > 50) {
@@ -95,14 +95,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Image lazy loading fallback
+// Loading function nga nice ag UI
 if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
         img.src = img.dataset.src || img.src;
     });
 } else {
-    // Fallback for browsers that don't support lazy loading
+    // paras mga browser nga dili mo support ug lazy loading effect
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
     document.body.appendChild(script);
